@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Sales Training Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 左侧导航栏 -->
+        <div class="sidebar">
+            <div class="nav-item" onclick="showContent('rules')">游戏规则</div>
+            <div class="nav-item" onclick="showContent('market')">市场背景</div>
+            <div class="nav-item" onclick="showContent('disease')">疾病背景</div>
+            <div class="nav-item" onclick="showContent('hospital')">医院背景</div>
+            <div class="nav-item" onclick="showContent('insight')">市场洞察</div>
+        </div>
+
+        <!-- 主要游戏区域 -->
+        <div class="main-content">
+            <!-- 游戏状态 -->
+            <div class="game-status">
+                <div class="round">回合: <span id="current-round">1</span>/15</div>
+                <div class="budget">预算: ¥<span id="current-budget">60000</span></div>
+                <div class="actions">剩余操作: <span id="remaining-actions">4</span></div>
+                <div class="timer">剩余时间: <span id="countdown">5:00</span></div>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="action-buttons">
+                <button onclick="showAction('visit')">专业学术拜访</button>
+                <button onclick="showAction('city-meeting')">城市会</button>
+                <button onclick="showAction('conference')">赞助外部三方会</button>
+                <button onclick="showAction('research')">市场调研</button>
+            </div>
+
+            <!-- 操作区域 -->
+            <div id="action-area"></div>
+
+            <!-- 活动日志 -->
+            <div class="activity-log">
+                <h3>活动记录</h3>
+                <div id="log-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

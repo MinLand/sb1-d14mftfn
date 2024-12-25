@@ -1,0 +1,14 @@
+{
+  "name": "medical-sales-training",
+  "version": "1.0.0",
+  "description": "Medical Sales Training Game",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "pip install -r requirements.txt",
+    "start": "python app.py",
+    "test": "pytest"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}
